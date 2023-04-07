@@ -1,0 +1,15 @@
+version: "3"
+services:
+  sbh-webchat-ui:
+    container_name: sbh-webchat-ui
+    image: sbh-webchat-ui:latest
+    restart: on-failure
+    build:
+      context: .
+      args:
+        - build_script=build-local
+    # network_mode: host
+    ports:
+      - 3440:3440
+    expose:
+      - 3440
